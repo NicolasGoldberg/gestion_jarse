@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Sistema.Base.Controles.ControlesDeUsuario.BotonDeNotificaciones"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sistema.Base.Controles.ControlesDeUsuario"
+             xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:icons="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:app="clr-namespace:Sistema"
+             mc:Ignorable="d" 
+             x:Name="concC"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Button Style="{StaticResource BotonHipervinculo}" Padding="10,0" Command="{Binding IOpen,ElementName=concC}" Height="22">
+            <StackPanel Orientation="Horizontal">
+                <icons:PackIconMaterialLight Kind="AlertOctagon" VerticalAlignment="Center" Visibility="Collapsed"/>
+                <StackPanel VerticalAlignment="Center" Margin="10,0,0,0">
+                    <TextBlock Text="Mensajes" TextAlignment="Center" Style="{StaticResource SubTituloLight}"/>
+                </StackPanel>
+            </StackPanel>
+        </Button>
+        <Popup
+            IsOpen="{Binding PopupOpen,ElementName=concC,Mode=TwoWay}"
+            StaysOpen="False"   
+            AllowsTransparency="True"
+            PopupAnimation="Slide"
+            >
+            <DockPanel>
+                <mat:Card mat:ShadowAssist.ShadowDepth="Depth1" Background="White" Padding="1,1,1,10" Margin="1" UniformCornerRadius="1">
+                    <StackPanel Width="350" Height="400">
+                        <StackPanel>
+                            <DockPanel HorizontalAlignment="Stretch">
+                                <TextBlock FontSize="18" Text="Mensajes" Margin="5,0" TextAlignment="Center" Style="{StaticResource SubTituloLight}" VerticalAlignment="Center"/>
+                                <TextBlock FontSize="12" TextAlignment="Right" Text="{Binding Source={x:Static app:App.InterfazPrincipal},Path=Hora,Mode=OneWay}" Style="{StaticResource SubTituloLight}" VerticalAlignment="Center"/>
+                            </DockPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </mat:Card>
+            </DockPanel>
+        </Popup>
+    </Grid>
+</UserControl>

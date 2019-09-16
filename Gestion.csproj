@@ -1,0 +1,589 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ED31554C-70E4-4186-B177-FC4E71A4722F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Sistema</RootNamespace>
+    <AssemblyName>gestion</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="extended">
+      <HintPath>..\..\Bases\extended\extended\bin\Debug\extended.dll</HintPath>
+    </Reference>
+    <Reference Include="jarlib">
+      <HintPath>..\jarlib\jarlib\bin\Debug\jarlib.dll</HintPath>
+    </Reference>
+    <Reference Include="MoonPdfLib">
+      <HintPath>..\..\..\ref\MoonPdfLib.dll</HintPath>
+    </Reference>
+    <Reference Include="MouseKeyboardActivityMonitor">
+      <HintPath>..\..\..\ref\MouseKeyboardActivityMonitor.dll</HintPath>
+    </Reference>
+    <Reference Include="rhlib">
+      <HintPath>..\rhlib\rhlib\bin\Debug\rhlib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Base\Controles\ControlesDeUsuario\BotonDeNotificaciones.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Controles\ControlesDeUsuario\BotonDeUsuario.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Controles\Metro\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Controles\Metro\ComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Controles\Metro\DatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Controles\Metro\PasswordBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Controles\Metro\RadioButtons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Controles\Metro\SearchTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Controles\Metro\TextArea.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Controles\Metro\TextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Controles\Metro\TimePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Controles\Ventanas\AcercaDe.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Controles\Ventanas\Imprimir.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Controles\Ventanas\Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Controles\Ventanas\Mensaje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Controles\Ventanas\Message.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Controles\Ventanas\MessageError.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Controles\Ventanas\MessageFormError.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Controles\Ventanas\MessageYesNo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Listados\PDF\PdfViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Programa\Estilos\Botones.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Programa\Estilos\Check.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Programa\Estilos\Colores.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Programa\Estilos\Contenedores.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Programa\Estilos\Datos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Programa\Estilos\Pestañas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Programa\Estilos\Tablas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Programa\Estilos\Texto.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Programa\Estilos\Ventanas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Programa\IniciarSesion\Controles\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Programa\Interfaz\InterfazDeInicio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Programa\Mensajes\Controles\Alerta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Programa\Mensajes\Controles\Aviso.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Programa\Mensajes\Controles\Avisos\Cargando.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Programa\Mensajes\Controles\Avisos\Mensaje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Programa\Mensajes\Controles\Cargando.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Programa\Mensajes\Controles\Completado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Programa\Mensajes\Controles\Error.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Programa\Mensajes\Controles\Generico.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Programa\Mensajes\Controles\Mensaje.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Base\Programa\Pestañas\Tab.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Programa\Interfaz\VentanaPrincipal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Base\Programa\Interfaz\InterfazPrincipal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Base\Controles\ControlesDeUsuario\BotonDeNotificaciones.xaml.cs">
+      <DependentUpon>BotonDeNotificaciones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Controles\ControlesDeUsuario\BotonDeUsuario.xaml.cs">
+      <DependentUpon>BotonDeUsuario.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Controles\Metro\CheckBox.xaml.cs">
+      <DependentUpon>CheckBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Controles\Metro\ComboBox.xaml.cs">
+      <DependentUpon>ComboBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Controles\Metro\DatePicker.xaml.cs">
+      <DependentUpon>DatePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Controles\Metro\PasswordBox.xaml.cs">
+      <DependentUpon>PasswordBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Controles\Metro\RadioButtons.xaml.cs">
+      <DependentUpon>RadioButtons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Controles\Metro\SearchTextBox.xaml.cs">
+      <DependentUpon>SearchTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Controles\Metro\TextArea.xaml.cs">
+      <DependentUpon>TextArea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Controles\Metro\TextBox.xaml.cs">
+      <DependentUpon>TextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Controles\Metro\TimePicker.xaml.cs">
+      <DependentUpon>TimePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Controles\Ventanas\AcercaDe.xaml.cs">
+      <DependentUpon>AcercaDe.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Controles\Ventanas\Imprimir.xaml.cs">
+      <DependentUpon>Imprimir.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Controles\Ventanas\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Controles\Ventanas\Mensaje.xaml.cs">
+      <DependentUpon>Mensaje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Controles\Ventanas\Message.xaml.cs">
+      <DependentUpon>Message.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Controles\Ventanas\MessageError.xaml.cs">
+      <DependentUpon>MessageError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Controles\Ventanas\MessageFormError.xaml.cs">
+      <DependentUpon>MessageFormError.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Controles\Ventanas\MessageYesNo.xaml.cs">
+      <DependentUpon>MessageYesNo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Listados\PDF\PdfViewer.xaml.cs">
+      <DependentUpon>PdfViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Programa\AppModel.cs" />
+    <Compile Include="Base\Programa\Comportamientos\HtmlRichTextBox.cs" />
+    <Compile Include="Base\Programa\IniciarSesion\Controlador.cs" />
+    <Compile Include="Base\Programa\IniciarSesion\Controles\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Programa\Interfaz\InterfazDeInicio.xaml.cs">
+      <DependentUpon>InterfazDeInicio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Programa\Mensajes\Controlador.cs" />
+    <Compile Include="Base\Programa\Mensajes\Controles\Alerta.xaml.cs">
+      <DependentUpon>Alerta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Programa\Mensajes\Controles\Aviso.xaml.cs">
+      <DependentUpon>Aviso.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Programa\Mensajes\Controles\Avisos\Cargando.xaml.cs">
+      <DependentUpon>Cargando.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Programa\Mensajes\Controles\Avisos\Mensaje.xaml.cs">
+      <DependentUpon>Mensaje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Programa\Mensajes\Controles\Cargando.xaml.cs">
+      <DependentUpon>Cargando.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Programa\Mensajes\Controles\Completado.xaml.cs">
+      <DependentUpon>Completado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Programa\Mensajes\Controles\Error.xaml.cs">
+      <DependentUpon>Error.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Programa\Mensajes\Controles\Generico.xaml.cs">
+      <DependentUpon>Generico.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Programa\Mensajes\Controles\Mensaje.xaml.cs">
+      <DependentUpon>Mensaje.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Programa\Notificaciones\Controlador.cs" />
+    <Compile Include="Base\Programa\Pestañas\Controlador.cs" />
+    <Compile Include="Base\Programa\Pestañas\Tab.xaml.cs">
+      <DependentUpon>Tab.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Programa\Teclas\Controlador.cs" />
+    <Compile Include="Controladores\Recientes.cs" />
+    <Compile Include="Controladores\Sections.cs" />
+    <Compile Include="Base\Programa\Interfaz\VentanaPrincipal.xaml.cs">
+      <DependentUpon>VentanaPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Base\Programa\Interfaz\InterfazPrincipal.xaml.cs">
+      <DependentUpon>InterfazPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Presentacion\Secciones\Articulos\GestionDeArticulos\Atributos\UCControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Secciones\Articulos\GestionDeArticulos\Mercadolibre\Publicaciones\UCControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Secciones\Articulos\GestionDeArticulos\Mercadolibre\UCControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Secciones\Articulos\GestionDeArticulos\Principal\UCControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Secciones\Articulos\GestionDeArticulos\Recursos\UCControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Secciones\Articulos\GestionDeArticulos\UCControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Secciones\Articulos\Principal\Subsecciones\Buscar\UCControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Secciones\Articulos\Principal\UCControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Secciones\Expedicion\Principal\Subsecciones\Pedidos\Buscar\UCControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Secciones\Expedicion\Principal\Subsecciones\Pedidos\Editar\UCControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Secciones\Expedicion\Principal\Subsecciones\Pedidos\Nuevo\UCControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Secciones\Expedicion\Principal\Subsecciones\Procesos\Buscar\UCControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Secciones\Expedicion\Principal\Subsecciones\Procesos\Editar\UCControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Secciones\Expedicion\Principal\Subsecciones\Procesos\Nuevo\UCControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Secciones\Expedicion\Principal\UCControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Presentacion\Selectores\SelectorArticulos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Presentacion\Secciones\Articulos\GestionDeArticulos\Atributos\UCControl.xaml.cs">
+      <DependentUpon>UCControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Secciones\Articulos\GestionDeArticulos\Mercadolibre\Publicaciones\UCControl.xaml.cs">
+      <DependentUpon>UCControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Secciones\Articulos\GestionDeArticulos\Mercadolibre\UCControl.xaml.cs">
+      <DependentUpon>UCControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Secciones\Articulos\GestionDeArticulos\Principal\UCControl.xaml.cs">
+      <DependentUpon>UCControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Secciones\Articulos\GestionDeArticulos\Recursos\UCControl.xaml.cs">
+      <DependentUpon>UCControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Secciones\Articulos\GestionDeArticulos\UCControl.xaml.cs">
+      <DependentUpon>UCControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Secciones\Articulos\Principal\Subsecciones\Buscar\UCControl.xaml.cs">
+      <DependentUpon>UCControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Secciones\Articulos\Principal\UCControl.xaml.cs">
+      <DependentUpon>UCControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Secciones\Expedicion\Principal\Subsecciones\Pedidos\Buscar\UCControl.xaml.cs">
+      <DependentUpon>UCControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Secciones\Expedicion\Principal\Subsecciones\Pedidos\Editar\UCControl.xaml.cs">
+      <DependentUpon>UCControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Secciones\Expedicion\Principal\Subsecciones\Pedidos\Nuevo\UCControl.xaml.cs">
+      <DependentUpon>UCControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Secciones\Expedicion\Principal\Subsecciones\Procesos\Buscar\UCControl.xaml.cs">
+      <DependentUpon>UCControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Secciones\Expedicion\Principal\Subsecciones\Procesos\Editar\UCControl.xaml.cs">
+      <DependentUpon>UCControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Secciones\Expedicion\Principal\Subsecciones\Procesos\Nuevo\UCControl.xaml.cs">
+      <DependentUpon>UCControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Secciones\Expedicion\Principal\UCControl.xaml.cs">
+      <DependentUpon>UCControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Selectores\SelectorArticulos.xaml.cs">
+      <DependentUpon>SelectorArticulos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CalcBinding">
+      <Version>2.5.2</Version>
+    </PackageReference>
+    <PackageReference Include="CefSharp.Wpf">
+      <Version>73.1.130</Version>
+    </PackageReference>
+    <PackageReference Include="Extended.Wpf.Toolkit">
+      <Version>3.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="HtmlToXamlConverter">
+      <Version>1.0.5727.24510</Version>
+    </PackageReference>
+    <PackageReference Include="MahApps.Metro">
+      <Version>1.6.5</Version>
+    </PackageReference>
+    <PackageReference Include="MahApps.Metro.IconPacks">
+      <Version>2.3.0</Version>
+    </PackageReference>
+    <PackageReference Include="MahApps.Metro.SimpleChildWindow">
+      <Version>1.5.0</Version>
+    </PackageReference>
+    <PackageReference Include="MaterialDesignThemes">
+      <Version>2.5.1</Version>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json">
+      <Version>12.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Notifications.Wpf">
+      <Version>0.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="PdfiumViewer">
+      <Version>2.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="PDFsharp-MigraDoc">
+      <Version>1.50.5147</Version>
+    </PackageReference>
+    <PackageReference Include="System.ValueTuple">
+      <Version>4.5.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ace32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="adsloc32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="axcws32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="no-image.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libmupdf.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="pdfium.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Presentacion\Controles\" />
+    <Folder Include="Presentacion\Selectores\Articulo\" />
+    <Folder Include="Presentacion\Selectores\Clientes\" />
+    <Folder Include="Presentacion\Selectores\Pedidos\Tipo\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

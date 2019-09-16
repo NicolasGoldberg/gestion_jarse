@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:app="clr-namespace:Sistema"
+                    xmlns:extmodels="clr-namespace:Extenciones.Clases.Modelos;assembly=extended"
+                    xmlns:clr="clr-namespace:System;assembly=mscorlib">
+
+    <clr:String x:Key="Version"></clr:String>
+    <clr:String x:Key="Compilacion"></clr:String>
+    <clr:String x:Key="SistemaOperativo"></clr:String>
+
+    <clr:String x:Key="Licencia"></clr:String>
+    <clr:String x:Key="ProximoVencimiento"></clr:String>
+
+    <clr:String x:Key="TituloDelSistema"></clr:String>
+    <clr:String x:Key="Empresa"></clr:String>
+    
+    <extmodels:Usuario x:Key="Usuario"/>
+    
+</ResourceDictionary>

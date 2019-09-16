@@ -1,0 +1,31 @@
+﻿<Application x:Class="Sistema.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Sistema">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Base/Programa/Estilos/Datos.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Base/Programa/Estilos/Colores.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Base/Programa/Estilos/Texto.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Base/Programa/Estilos/Botones.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Base/Programa/Estilos/Pestañas.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Base/Programa/Estilos/Tablas.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Base/Programa/Estilos/Check.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Base/Programa/Estilos/Ventanas.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Base/Programa/Estilos/Contenedores.xaml" />
+
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Cobalt.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Light.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Blue.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

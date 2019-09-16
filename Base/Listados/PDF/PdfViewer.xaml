@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Sistema.Base.Listados.PDF.PdfViewer"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:icons="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             x:Name="pdfView"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Background="#525659" BorderBrush="DimGray" BorderThickness="0,1,0,0">
+    <Grid>
+        <Grid x:Name="PdfContent">
+
+        </Grid>
+
+        <StackPanel  Background="Transparent" VerticalAlignment="Top"  HorizontalAlignment="Right" Margin="0,0,30,0" Visibility="{Binding Active,ElementName=pdfView,Converter={StaticResource VisCon}}">
+            <Button  Background="{StaticResource Principal}" BorderBrush="{StaticResource Principal}" Style="{StaticResource BotonRedondo}" Width="50" Height="50" Margin="0,5" Focusable="False" Command="{Binding Print,ElementName=pdfView}" ToolTip="Imprimir">
+                <icons:MaterialLight Kind="Printer" Height="24" Width="24" />
+            </Button>
+            <Button  Background="{StaticResource Principal}" BorderBrush="{StaticResource Principal}" Style="{StaticResource BotonRedondo}" Width="50" Height="50" Margin="0,5" Focusable="False" Command="{Binding Download,ElementName=pdfView}" ToolTip="Guardar">
+                <icons:MaterialLight Kind="ContentSave" Height="24" Width="24" />
+            </Button>
+
+        </StackPanel>
+
+        <StackPanel Orientation="Horizontal" Background="Transparent" VerticalAlignment="Top"  HorizontalAlignment="Right" Margin="0,10,90,0" Visibility="{Binding Active,ElementName=pdfView,Converter={StaticResource VisCon}}">
+            <materialDesign:Card materialDesign:ShadowAssist.ShadowDepth="Depth1" Width="60" materialDesign:ShadowAssist.ShadowEdges="Top" Padding="5" VerticalAlignment="Center">
+                <TextBlock TextAlignment="Center" FontSize="14">
+                    <Run Text="{Binding ActualPage,ElementName=pdfView,Mode=OneWay}"/>
+                    <Run Text="/"/>
+                    <Run Text="{Binding TotalPages,ElementName=pdfView,Mode=OneWay}"/>
+                </TextBlock>
+            </materialDesign:Card>
+            <Button Background="{StaticResource Principal}" BorderBrush="{StaticResource Principal}" Style="{StaticResource BotonRedondo}" Width="40" Height="40" Margin="5,0" Focusable="False" Command="{Binding GotoPreviousPage,ElementName=pdfView}" Padding="0" ToolTip="Pagina anterior">
+                <icons:MaterialLight Kind="ArrowLeft" Height="20" Width="20"/>
+            </Button>
+            <Button Background="{StaticResource Principal}" BorderBrush="{StaticResource Principal}" Style="{StaticResource BotonRedondo}" Width="40" Height="40" Margin="5,0" Focusable="False" Command="{Binding GotoNextPage,ElementName=pdfView}" Padding="0" ToolTip="Pagina siguiente">
+                <icons:MaterialLight Kind="ArrowRight" Height="20" Width="20" />
+            </Button>
+        </StackPanel>
+
+        <StackPanel Background="Transparent" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,30,25" Visibility="{Binding Active,ElementName=pdfView,Converter={StaticResource VisCon}}">
+            <Button Background="{StaticResource Principal}" BorderBrush="{StaticResource Principal}" Style="{StaticResource BotonRedondo}" Width="45" Height="45" Margin="0,0,0,15" Focusable="False" Command="{Binding Maximize,ElementName=pdfView}" ToolTip="Adaptar tamaño">
+                <icons:MaterialLight Kind="CropFree" Height="24" Width="24" />
+            </Button>
+            <Button Background="{StaticResource Principal}" BorderBrush="{StaticResource Principal}" Style="{StaticResource BotonRedondo}" Width="40" Height="40" Margin="0,5" Focusable="False" Command="{Binding ZoomIn,ElementName=pdfView}" ToolTip="Más zoom">
+                <icons:MaterialLight Kind="Plus" Height="20" Width="20" />
+            </Button>
+            <Button Background="{StaticResource Principal}" BorderBrush="{StaticResource Principal}" Style="{StaticResource BotonRedondo}" Width="40" Height="40" Margin="0,5" Focusable="False" Command="{Binding ZoomOut,ElementName=pdfView}" ToolTip="Menos zoom">
+                <icons:MaterialLight Kind="Minus" Height="20" Width="20" />
+            </Button>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

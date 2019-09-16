@@ -1,0 +1,127 @@
+﻿<UserControl x:Class="Sistema.Presentacion.Secciones.Articulos.GestionDeArticulos.UCControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:icons="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:metro="clr-namespace:Sistema.Base.Controles.Metro"
+             xmlns:c="clr-namespace:CalcBinding;assembly=CalcBinding"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#f7f7f7">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <mat:Card Grid.Column="0" Background="#DDDDDD" mat:ShadowAssist.ShadowDepth="Depth1" mat:ShadowAssist.ShadowEdges="Right" mat:UniformCornerRadius="0.0" Padding="0,0,0,0" Margin="0,0,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Left" Panel.ZIndex="1" MaxWidth="{c:Binding 'vMenuAbierto ? 400 : 25' }">
+            <Grid>
+                <Grid MinWidth="350" Visibility="{Binding vMenuAbierto,Mode=OneWay,Converter={StaticResource VisCon}}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel>
+                        <DockPanel Margin="5,0,5,0">
+                            <StackPanel DockPanel.Dock="Top" VerticalAlignment="Top" Margin="10,10,0,0" HorizontalAlignment="Stretch">
+                                <TextBlock Text="{Binding Articulo.Codigo}" FontSize="18" Foreground="DimGray"/>
+                            </StackPanel>
+                        </DockPanel>
+                        <Separator Background="#AEAEAE" Margin="10,5,10,5"/>
+                        <DockPanel Margin="10,0">
+                            <Image DockPanel.Dock="Left" HorizontalAlignment="Left" Source="{Binding Articulo.Recursos.ImagenBuscador}" Width="100" Height="100"/>
+                            <StackPanel DockPanel.Dock="Right" HorizontalAlignment="Stretch" Margin="5,0">
+                                <TextBlock Text="{Binding Articulo.Titulo.Descripcion}" FontSize="14" Foreground="DimGray" TextWrapping="Wrap"/>
+                                <TextBlock Text="{Binding Articulo.Marca.Descripcion}" FontSize="14" Foreground="DimGray" TextWrapping="Wrap"/>
+                                <TextBlock Text="{Binding Articulo.Cola}" FontSize="14" Foreground="DimGray" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </DockPanel>
+                        <Separator Background="#AEAEAE" Margin="10,5,10,5"/>
+                    </StackPanel>
+                    <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                        <StackPanel Margin="0">
+                            <Expander Margin="5,0" Background="Transparent" Header="General" FontSize="14" Foreground="#424B4A" IsExpanded="True">
+                                <WrapPanel Orientation="Horizontal">
+                                    <Button Style="{StaticResource BotonFlatDark}" Height="60" Width="60" Background="#BC5550" Padding="1" Margin="2,0" Command="{Binding IComandos[0]}">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <mat:PackIcon Kind="Home" HorizontalAlignment="Center" Width="30" Height="30" Foreground="LightGray"/>
+                                            <TextBlock Text="Inicio" FontSize="14" TextAlignment="Center" Foreground="WhiteSmoke"/>
+                                        </StackPanel>
+                                    </Button>
+                                    <Button Style="{StaticResource BotonFlatDark}" Height="60" Width="60" Background="#BC5550" Padding="1" Margin="2,0" Command="{Binding IComandos[0]}">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <mat:PackIcon Kind="FormatListChecks" HorizontalAlignment="Center" Width="30" Height="30" Foreground="LightGray"/>
+                                            <TextBlock Text="Ficha" FontSize="14" TextAlignment="Center" Foreground="WhiteSmoke"/>
+                                        </StackPanel>
+                                    </Button>
+                                    <Button Style="{StaticResource BotonFlatDark}" Height="60" Width="60" Background="#BC5550" Padding="1" Margin="2,0"  Command="{Binding IComandos[1]}">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <mat:PackIcon Kind="CashUsd" HorizontalAlignment="Center" Width="30" Height="30" Foreground="LightGray"/>
+                                            <TextBlock Text="Precios" FontSize="14" TextAlignment="Center" Foreground="WhiteSmoke"/>
+                                        </StackPanel>
+                                    </Button>
+                                    <Button Style="{StaticResource BotonFlatDark}" Height="60" Width="60" Background="#BC5550" Padding="1" Margin="2,0"  Command="{Binding IComandos[1]}">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <mat:PackIcon Kind="FormatListBulletedType" HorizontalAlignment="Center" Width="30" Height="30" Foreground="LightGray"/>
+                                            <TextBlock Text="Atributos" FontSize="14" TextAlignment="Center" Foreground="WhiteSmoke"/>
+                                        </StackPanel>
+                                    </Button>
+                                    <Button Style="{StaticResource BotonFlatDark}" Height="60" Width="60" Background="#BC5550" Padding="1" Margin="2,0"  Command="{Binding IComandos[1]}">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <mat:PackIcon Kind="ImageAlbum" HorizontalAlignment="Center" Width="30" Height="30" Foreground="LightGray"/>
+                                            <TextBlock Text="Recursos" FontSize="14" TextAlignment="Center" Foreground="WhiteSmoke"/>
+                                        </StackPanel>
+                                    </Button>
+                                </WrapPanel>
+                            </Expander>
+                            <Expander Margin="5,0" Background="Transparent" Header="Stock y depositos" FontSize="14" Foreground="#424B4A" IsExpanded="True">
+                                <WrapPanel Orientation="Horizontal">
+                                    <Button Style="{StaticResource BotonFlatDark}" Height="60" Width="60" Background="#BC5550" Padding="1" Margin="2,1">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <mat:PackIcon Kind="BoxVariantClosed" HorizontalAlignment="Center" Width="30" Height="30" Foreground="LightGray"/>
+                                            <TextBlock Text="Stock" FontSize="14" TextAlignment="Center" Foreground="WhiteSmoke"/>
+                                        </StackPanel>
+                                    </Button>
+                                    <Button Style="{StaticResource BotonFlatDark}" Height="60" Width="126" Background="#BC5550" Padding="1" Margin="2,1">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <mat:PackIcon Kind="ArrowDecision" HorizontalAlignment="Center" Width="30" Height="30" Foreground="LightGray"/>
+                                            <TextBlock Text="Movimientos" FontSize="14" TextAlignment="Center" Foreground="WhiteSmoke"/>
+                                        </StackPanel>
+                                    </Button>
+                                </WrapPanel>
+                            </Expander>
+                            <Expander Margin="5,0" Background="Transparent" Header="MercadoLibre" FontSize="14" Foreground="#424B4A" IsExpanded="True">
+                                <WrapPanel Orientation="Horizontal">
+                                    <Button Style="{StaticResource BotonFlatDark}" Height="60" Width="126" Background="#BC5550" Padding="1" Margin="2,1">
+                                        <StackPanel VerticalAlignment="Center">
+                                            <mat:PackIcon Kind="CardBulleted" HorizontalAlignment="Center" Width="30" Height="30" Foreground="LightGray"/>
+                                            <TextBlock Text="Publicaciones" FontSize="14" TextAlignment="Center" Foreground="WhiteSmoke"/>
+                                        </StackPanel>
+                                    </Button>
+                                </WrapPanel>
+                            </Expander>
+                        </StackPanel>
+                    </ScrollViewer>
+                    <DockPanel Grid.Row="2">
+                        <StackPanel  HorizontalAlignment="Stretch">
+
+                        </StackPanel>
+                    </DockPanel>
+                </Grid>
+                <Grid VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <Button Style="{StaticResource BotonFlatDark}" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Right" ToolTip="Ocultar menú lateral" Command="{Binding SwitchMenu}" CommandParameter="2" Visibility="{Binding vMenuAbierto,Mode=OneWay,Converter={StaticResource VisCon}}">
+                        <icons:MaterialLight Kind="ChevronLeft" Width="20" Height="15"/>
+                    </Button>
+                    <Button Style="{StaticResource BotonFlatDark}" Padding="0" VerticalAlignment="Center" HorizontalAlignment="Right" ToolTip="Mostrar menú lateral" Command="{Binding SwitchMenu}" CommandParameter="1" Visibility="{Binding vMenuCerrado,Mode=OneWay,Converter={StaticResource VisCon}}">
+                        <icons:MaterialLight Kind="ChevronRight" Width="20" Height="15"/>
+                    </Button>
+                </Grid>
+            </Grid>
+        </mat:Card>
+        <DockPanel Grid.Column="1">
+            <UserControl DockPanel.Dock="Top" x:Name="MainContent"/>
+        </DockPanel>
+    </Grid>
+</UserControl>

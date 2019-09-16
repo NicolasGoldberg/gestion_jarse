@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="Sistema.Base.Controles.Metro.CheckBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:s="clr-namespace:System;assembly=mscorlib"
+             x:Name="ACControl"
+             mc:Ignorable="d" 
+             d:DesignHeight="100" d:DesignWidth="200" MouseLeftButtonUp="eMouseLeftButtonUp" MouseEnter="eMouseEnter" MouseLeave="eMouseLeave">
+    <StackPanel>
+        <Border BorderThickness="1" BorderBrush="Transparent" Background="White">
+            <Grid x:Name="gControl">
+                <CheckBox Style="{StaticResource CheckBoxDark}"
+                            MouseEnter="eMouseEnter"
+                            MouseLeave="eMouseLeave"
+                            Height="30"
+                            x:Name="aControl"
+                            BorderThickness="0"
+                            FontSize="14"
+                            FontStretch="Condensed"
+                            FontWeight="Normal"
+                            LostFocus="ControlLostFocus"
+                            GotFocus="ControlGetFocus"
+                            VerticalContentAlignment="Center"
+                            IsChecked="{Binding InputValue,ElementName=ACControl,Mode=TwoWay,UpdateSourceTrigger=Default}"
+                            IsHitTestVisible="{Binding NotReadOnly,ElementName=ACControl,Mode=OneWay}"
+                            >
+                    <TextBlock Text="{Binding Title,ElementName=ACControl  }" Foreground="DimGray" Margin="3,0" FontSize="14" MouseLeftButtonUp="eMouseLeftButtonUp" MouseEnter="eMouseEnter" MouseLeave="eMouseLeave"/>
+                </CheckBox>
+            </Grid>
+        </Border>
+    </StackPanel>
+</UserControl>

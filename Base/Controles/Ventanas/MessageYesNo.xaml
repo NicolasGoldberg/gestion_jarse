@@ -1,0 +1,24 @@
+﻿<mah:MetroWindow
+        x:Class="Sistema.Base.Controles.Ventanas.MessageYesNo"    
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sistema.Base.Controles.Ventanas"
+        xmlns:icons="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d"
+        x:Name="eCon"
+        Height="150" Width="500" ShowTitleBar="False" ShowInTaskbar="False" ShowMaxRestoreButton="False" ShowMinButton="False" ShowCloseButton="False" BorderThickness="0" Background="#41403D" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="400">
+            <TextBlock Text="{Binding Titulo,ElementName=eCon}" Style="{StaticResource TituloGrandeLight}" Foreground="White"/>
+            <TextBlock Text="{Binding Contenido,ElementName=eCon}" Style="{StaticResource SubTituloLight}" Foreground="White" Margin="0,5" TextWrapping="Wrap" Height="60"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Command="{Binding IAcept,ElementName=eCon}" Style="{StaticResource BotonVerde}" Content="Si" Width="80" Margin="10,0"/>
+                <Button Command="{Binding IClose,ElementName=eCon}" Style="{StaticResource BotonRojo}" Content="No" Width="80" Margin="0"/>
+            </StackPanel>
+            
+        </StackPanel>
+    </Grid>
+</mah:MetroWindow>

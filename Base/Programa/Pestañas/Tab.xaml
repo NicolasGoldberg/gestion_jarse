@@ -1,0 +1,26 @@
+﻿<UserControl x:Class="Sistema.Base.Programa.Pestañas.Tab"
+             x:Name="BtnTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sistema.Base.Programa.Pestañas"
+             xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" 
+             Focusable="False" Margin="1,0,0,0" VerticalAlignment="Bottom">
+    <Button x:Name="Btn" MouseUp="Button_MouseUp" Focusable="False" Style="{StaticResource BotonFlatDark}" MaxWidth="150" Command="{Binding ISeleccionar,ElementName=BtnTab}" Padding="0">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Focusable="False" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Stretch" Width="{Binding ActualWidth,ElementName=Btn}">
+                <TextBlock Text="{Binding Item.Titulo,Mode=OneWay,ElementName=BtnTab}" HorizontalAlignment="Stretch" Style="{StaticResource SubTituloLight}" Foreground="White" TextAlignment="Left" VerticalAlignment="Center" TextWrapping="NoWrap" Margin="2,0,20,0"/>
+            </StackPanel>
+            <Button Grid.Column="1" Focusable="False" ToolTip="Cerrar" Command="{Binding ICerrar,ElementName=BtnTab}" Style="{StaticResource BotonClose}" Padding="3" Height="20" VerticalAlignment="Center" HorizontalAlignment="Right" Visibility="{Binding Item.PermiteCerrar,ElementName=BtnTab,Mode=OneWay,Converter={StaticResource VisCon}}">
+                <iconPacks:PackIconMaterial Kind="Close" VerticalAlignment="Center" HorizontalAlignment="Center" Height="10" Width="10"/>
+            </Button>
+        </Grid>
+    </Button>
+</UserControl>

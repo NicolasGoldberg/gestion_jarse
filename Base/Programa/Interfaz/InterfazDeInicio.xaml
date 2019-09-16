@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="Sistema.Base.Programa.Interfaz.InterfazDeInicio"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sistema.Base.Programa.Interfaz"
+             xmlns:app="clr-namespace:Sistema"
+             xmlns:icons="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             xmlns:metro="clr-namespace:Sistema.Base.Controles.Metro"
+             mc:Ignorable="d" 
+             x:Name="cInicio"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel HorizontalAlignment="Left" Margin="5,0,0,0">
+                <Button Style="{StaticResource BotonHipervinculo}" Command="{Binding Source={x:Static app:App.InterfazPrincipal},Path=IAcercaDe,Mode=OneWay}">
+                    <TextBlock Text="{StaticResource TituloDelSistema}" TextAlignment="Left" Style="{StaticResource TituloGiganteLight}"/>
+                </Button>
+                <TextBlock Text="{StaticResource Empresa}" Style="{StaticResource SubTituloLight}"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Margin="0,0,5,0">
+                <TextBlock FontSize="24" TextAlignment="Right" Text="{Binding Source={x:Static app:App.InterfazPrincipal},Path=Hora,Mode=OneWay}" Style="{StaticResource SubTituloLight}"/>
+                <TextBlock FontSize="16" Text="{Binding Source={x:Static app:App.InterfazPrincipal},Path=Fecha,Mode=OneWay}" Style="{StaticResource SubTituloLight}"/>
+            </StackPanel>
+        </Grid>
+        <DockPanel Grid.Row="1" Background="Aqua" Margin="10,50,10,10">
+            <Button Height="100" Width="50" Style="{StaticResource BotonRedondoImagenes}" Background="Blue" Padding="0" Margin="5,0,200,0" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch">
+                <DockPanel Background="Transparent" Margin="5">
+                    <TextBlock Text="Hola bb" FontSize="18" TextAlignment="Center" VerticalAlignment="Center"/>
+                </DockPanel>
+            </Button>
+            <WrapPanel>
+                    <Button Style="{StaticResource BotonFlatDark}" Height="100" Width="100" Padding="0" Background="Red" Command="{Binding Source={x:Static app:Sections.PedidosProcesos},Path=Run}">
+                        <StackPanel>
+                            <icons:PackIconMaterialLight Kind="Cart" Width="20" Height="20" HorizontalAlignment="Center" Margin="5"/>
+                            <TextBlock Style="{StaticResource SubTituloLight}" FontSize="16" Text="Ventas" TextAlignment="Center" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource BotonFlatDark}" Height="100" Width="100" Padding="0" Background="Red" Command="{Binding Source={x:Static app:Sections.Articulos},Path=Run}">
+                        <StackPanel>
+                            <icons:PackIconMaterialLight Kind="Cart" Width="20" Height="20" HorizontalAlignment="Center" Margin="5"/>
+                            <TextBlock Style="{StaticResource SubTituloLight}" FontSize="16" Text="Ventas" TextAlignment="Center" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+            </WrapPanel>
+
+        </DockPanel>
+    </Grid>
+</UserControl>

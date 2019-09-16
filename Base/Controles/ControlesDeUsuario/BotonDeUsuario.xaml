@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="Sistema.Base.Controles.ControlesDeUsuario.BotonDeUsuario"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Sistema.Base.Controles.ControlesDeUsuario"
+             xmlns:mat="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:icons="http://metro.mahapps.com/winfx/xaml/iconpacks"
+             mc:Ignorable="d" 
+             x:Name="concC"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Button Style="{StaticResource BotonHipervinculo}" MaxWidth="250" Padding="0" Command="{Binding IOpen,ElementName=concC}">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel VerticalAlignment="Center" Margin="5,0,0,0">
+                    <TextBlock Text="{Binding Source={StaticResource Usuario},Path=Nombre,Mode=OneWay}" Style="{StaticResource SubTituloLight}" TextWrapping="NoWrap"/>
+                </StackPanel>
+            </StackPanel>
+        </Button>
+        <Popup
+            IsOpen="{Binding PopupOpen,ElementName=concC,Mode=TwoWay}"
+            StaysOpen="False"   
+            AllowsTransparency="True"
+            PopupAnimation="Scroll"
+            >
+            <DockPanel>
+                <mat:Card mat:ShadowAssist.ShadowDepth="Depth1" mat:ShadowAssist.ShadowEdges="Bottom,Left,Right" Background="White" BorderThickness="1,0,1,1" Padding="1,10,1,10" Margin="1,0,1,1">
+                    <StackPanel Width="200">
+                        <icons:PackIconModern Kind="UserTie" VerticalAlignment="Center" Foreground="DimGray" Width="50" Height="50" HorizontalAlignment="Center" Margin="0,10"/>
+                        <TextBlock Text="{Binding Source={StaticResource Usuario},Path=Nombre,Mode=OneWay}" Style="{StaticResource SubTituloLight}" TextWrapping="Wrap" TextAlignment="Center"/>
+                        <TextBlock Text="{Binding Source={StaticResource Usuario},Path=Grupo.Descripcion,Mode=OneWay}" Style="{StaticResource SubTituloLight}" TextWrapping="Wrap" TextAlignment="Center"/>
+                    </StackPanel>
+                </mat:Card>
+            </DockPanel>
+        </Popup>
+    </Grid>
+</UserControl>
